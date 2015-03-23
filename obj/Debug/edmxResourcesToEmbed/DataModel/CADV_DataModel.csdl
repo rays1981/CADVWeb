@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CADVDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CADVDbEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CADV_PatientReferral" EntityType="CADVDbModel.CADV_PatientReferral" />
+    <EntitySet Name="CADV_ReferralTypes" EntityType="CADVDbModel.CADV_ReferralTypes" />
+    <EntitySet Name="CADV_States" EntityType="CADVDbModel.CADV_States" />
+    <EntitySet Name="CADV_Doctors" EntityType="CADVDbModel.CADV_Doctors" />
+    <EntitySet Name="CADV_UserMaster" EntityType="CADVDbModel.CADV_UserMaster" />
+    <EntitySet Name="CADV_UserRoles" EntityType="CADVDbModel.CADV_UserRoles" />
+  </EntityContainer>
+  <EntityType Name="CADV_PatientReferral">
+    <Key>
+      <PropertyRef Name="ReferralID" />
+    </Key>
+    <Property Name="ReferralID" Type="Guid" Nullable="false" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="RefPractice" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PatientFname" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PatientLname" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Address_line1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Address_line2" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Address_city" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Address_state" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="Postalcode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Createdby" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CADV_ReferralTypes">
+    <Key>
+      <PropertyRef Name="ReferralTypeID" />
+    </Key>
+    <Property Name="ReferralTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferralTypeName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CADV_States">
+    <Key>
+      <PropertyRef Name="statecode" />
+    </Key>
+    <Property Name="statecode" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="statename" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CADV_Doctors">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Type="Guid" Name="DoctorID" Nullable="false" />
+    <Property Type="String" Name="Initials" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Firstname" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Middlename" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Lastname" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CADV_UserMaster">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Type="Guid" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Firstname" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Lastname" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Loginname" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Loginpass" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="RoleID" />
+    <Property Type="DateTime" Name="Createdon" Precision="3" />
+  </EntityType>
+  <EntityType Name="CADV_UserRoles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Type="Int32" Name="RoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Role" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

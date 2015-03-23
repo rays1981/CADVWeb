@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CADVWeb.SiteMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cadvajax" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> Warrington Township Portal </title>
+
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <%: Scripts.Render(BundleTable.Bundles.ResolveBundleUrl("~/bundles/modernizr")) %>
+             
+    </asp:PlaceHolder>
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/css" />
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="Content/Site.css" type="text/css" />
+    <link rel="stylesheet" href="Content/component.css" type="text/css" />
+</head>
+<body>
+
+    <form id="Form1" runat="server">
+        <cadvajax:ToolkitScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/classie.js" />
+
+                <asp:ScriptReference Path="~/Scripts/modernizr.custom.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-1.10.2.min.js" />
+                <asp:ScriptReference Path="~/ckeditor/ckeditor.js" />
+                <asp:ScriptReference Path="~/ckeditor/adapters/jquery.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/pagescript.js" />
+            </Scripts>
+        </cadvajax:ToolkitScriptManager>
+
+
+
+        <div class="HeaderOuter">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <img src="Images/logoNew4.png" alt="ABRC" title="ABRC" />
+                    </div>
+                    <div class="navbar-collapse collapse">
+
+                        <div class="logoutBTNCont" runat="server" id="divLogOut">
+                            <a href="Login.aspx" class="logout">
+                                <img src="Images/blankImg.png" title="Logout" /></a>
+                        </div>
+                        <asp:Label class="welcomeUser" runat="server" ID="lblWelcome">
+                                
+                        </asp:Label>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bodyOuter">
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <hr />
+            </div>
+        </div>
+        <%--this is the modal popup for the delete confirmation--%>
+        <asp:Panel runat="server" ID="DivDeleteConfirmation" Style="display: none;" class="popupConfirmation">
+            <div class="popup_Container">
+                <div class="popup_Titlebar" id="PopupHeader">
+                    <div class="TitlebarLeft">
+                        Delete Record
+                    </div>
+                    <div class="TitlebarRight" onclick="$get('ButtonDeleteCancel').click();">
+                    </div>
+                </div>
+                <div class="popup_Body">
+                    <p>
+                        Are you sure, you want to delete this record?
+                    </p>
+                </div>
+                <div style="float: left; margin-top: -35px; margin-left: 10px;">
+                    <input id="ButtonDeleleOkay" value="Ok" type="button" class="popup_addCustomerBtn" />
+                    <input id="ButtonDeleteCancel" value="Cancel" type="button" class="popup_addCustomerBtn" />
+                </div>
+            </div>
+        </asp:Panel>
+        <div class="footerouter">
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - abrc. All Rights Reserved.<a href="http://www.thethinkerz.com" target="_blank" class="footerInnerL">Powerd by</a></p>
+            </footer>
+        </div>
+    </form>
+
+</body>
+</html>

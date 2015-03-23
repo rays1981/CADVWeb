@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CADVDbModelStoreContainer" CdmEntityContainer="CADVDbEntities">
+    <EntitySetMapping Name="CADV_PatientReferral">
+      <EntityTypeMapping TypeName="CADVDbModel.CADV_PatientReferral">
+        <MappingFragment StoreEntitySet="CADV_PatientReferral">
+          <ScalarProperty Name="ReferralID" ColumnName="ReferralID" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="RefPractice" ColumnName="RefPractice" />
+          <ScalarProperty Name="PatientFname" ColumnName="PatientFname" />
+          <ScalarProperty Name="PatientLname" ColumnName="PatientLname" />
+          <ScalarProperty Name="Address_line1" ColumnName="Address_line1" />
+          <ScalarProperty Name="Address_line2" ColumnName="Address_line2" />
+          <ScalarProperty Name="Address_city" ColumnName="Address_city" />
+          <ScalarProperty Name="Address_state" ColumnName="Address_state" />
+          <ScalarProperty Name="Postalcode" ColumnName="Postalcode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CADV_ReferralTypes">
+      <EntityTypeMapping TypeName="CADVDbModel.CADV_ReferralTypes">
+        <MappingFragment StoreEntitySet="CADV_ReferralTypes">
+          <ScalarProperty Name="ReferralTypeID" ColumnName="ReferralTypeID" />
+          <ScalarProperty Name="ReferralTypeName" ColumnName="ReferralTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CADV_States">
+      <EntityTypeMapping TypeName="CADVDbModel.CADV_States">
+        <MappingFragment StoreEntitySet="CADV_States">
+          <ScalarProperty Name="statecode" ColumnName="statecode" />
+          <ScalarProperty Name="statename" ColumnName="statename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CADV_Doctors">
+      <EntityTypeMapping TypeName="CADVDbModel.CADV_Doctors">
+        <MappingFragment StoreEntitySet="CADV_Doctors">
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CADV_UserMaster">
+      <EntityTypeMapping TypeName="CADVDbModel.CADV_UserMaster">
+        <MappingFragment StoreEntitySet="CADV_UserMaster">
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Loginpass" ColumnName="Loginpass" />
+          <ScalarProperty Name="Loginname" ColumnName="Loginname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CADV_UserRoles">
+      <EntityTypeMapping TypeName="CADVDbModel.CADV_UserRoles">
+        <MappingFragment StoreEntitySet="CADV_UserRoles">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
