@@ -10,105 +10,114 @@
 namespace CADVWeb {
     
     
-    public partial class Login {
+    public partial class NewUser {
         
         /// <summary>
-        /// Form1 control.
+        /// lblmsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
+        protected global::System.Web.UI.WebControls.Label lblmsg;
         
         /// <summary>
-        /// ScriptManagerMain control.
+        /// txtfname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ToolkitScriptManager ScriptManagerMain;
+        protected global::System.Web.UI.WebControls.TextBox txtfname;
         
         /// <summary>
-        /// UpdateProgressLogin control.
+        /// rqfname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgressLogin;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqfname;
         
         /// <summary>
-        /// UpdatePanelLogin control.
+        /// txtlname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanelLogin;
+        protected global::System.Web.UI.WebControls.TextBox txtlname;
         
         /// <summary>
-        /// ForgotPassword_ModalPopupExtender control.
+        /// rqlname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender ForgotPassword_ModalPopupExtender;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqlname;
         
         /// <summary>
-        /// lbFailureText control.
+        /// txtloginname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFailureText;
+        protected global::System.Web.UI.WebControls.TextBox txtloginname;
         
         /// <summary>
-        /// txtUserName control.
+        /// rqlogname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqlogname;
         
         /// <summary>
-        /// txtPassword control.
+        /// txtpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtpass;
         
         /// <summary>
-        /// BtnLoginButton control.
+        /// rqpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLoginButton;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqpass;
         
         /// <summary>
-        /// lnkForgotPassword control.
+        /// txtconfpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkForgotPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtconfpass;
         
         /// <summary>
-        /// lnkNewUser control.
+        /// rqcpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkNewUser;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqcpass;
+        
+        /// <summary>
+        /// btnsave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsave;
     }
 }

@@ -51,6 +51,10 @@
                         Forgot Password?
                         <asp:LinkButton ID="lnkForgotPassword" Text="Click Here..." runat="server"></asp:LinkButton>
                     </p>
+                    <p>
+                        New User?
+                        <asp:LinkButton ID="lnkNewUser" Text="Click Here..." runat="server" OnCommand="lnkNewUser_Command"></asp:LinkButton>
+                    </p>
                 </div>
                 <div class="loginfooterouter">
                     <footer>

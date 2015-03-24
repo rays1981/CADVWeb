@@ -31,15 +31,6 @@ namespace CADVWeb {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqphno;
         
         /// <summary>
-        /// regexarea control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexarea;
-        
-        /// <summary>
         /// rqrefprac control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace CADVWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqrefprac;
-        
-        /// <summary>
-        /// txtrefpractice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtrefpractice;
         
         /// <summary>
         /// rqfname control.
@@ -67,15 +49,6 @@ namespace CADVWeb {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqfname;
         
         /// <summary>
-        /// txtpfname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpfname;
-        
-        /// <summary>
         /// rqlname control.
         /// </summary>
         /// <remarks>
@@ -83,6 +56,33 @@ namespace CADVWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqlname;
+        
+        /// <summary>
+        /// regexarea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexarea;
+        
+        /// <summary>
+        /// txtrefpractice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtrefpractice;
+        
+        /// <summary>
+        /// txtpfname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpfname;
         
         /// <summary>
         /// txtplname control.

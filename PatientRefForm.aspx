@@ -8,10 +8,16 @@
         <div style="clear: both; width: auto; float: right;">
             <asp:RequiredFieldValidator ControlToValidate="txtphoneareacode" runat="server" ID="rqphareacode"
                 ErrorMessage="**Please enter Phone Area Code" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
-            &nbsp;<asp:RequiredFieldValidator ControlToValidate="txtphonenumber" runat="server" ID="rqphno"
-                ErrorMessage="**Please enter Phone Number" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
-            &nbsp;<asp:RegularExpressionValidator ControlToValidate="txtphoneareacode" ForeColor="Red" runat="server" ID="regexarea" 
-                ErrorMessage="**Phone Area code should contain 3 characters" ValidationGroup="prefvalidation" ValidationExpression="^[0-9]{3}$"></asp:RegularExpressionValidator>
+            <asp:RequiredFieldValidator ControlToValidate="txtphonenumber" runat="server" ID="rqphno"
+                ErrorMessage="&nbsp;**Please enter Phone Number" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>            
+            <asp:RequiredFieldValidator ControlToValidate="txtrefpractice" runat="server" ID="rqrefprac"
+                    ErrorMessage="&nbsp;**Please enter Referring Practice" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ControlToValidate="txtpfname" runat="server" ID="rqfname"
+                    ErrorMessage="&nbsp;**Please enter Patient's First name" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ControlToValidate="txtplname" runat="server" ID="rqlname"
+                    ErrorMessage="&nbsp;**Please enter Patient's Last name" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ControlToValidate="txtphoneareacode" ForeColor="Red" runat="server" ID="regexarea" 
+                ErrorMessage="&nbsp;**Phone Area code should contain 3 characters" ValidationGroup="prefvalidation" ValidationExpression="^[0-9]{3}$"></asp:RegularExpressionValidator>
         </div>
         <div style="clear: both;">
             <div style="float: left; text-align: right">Date Entered:</div>
@@ -24,25 +30,19 @@
         <div style="clear: both;">
             <div style="float: left; text-align: right">Referring Practice:*</div>
             <div style="float: right; text-align: left">
-                <%--<asp:DropDownList runat="server" ID="ddl_doctors" DataValueField="DoctorID"></asp:DropDownList>--%>
-                <asp:RequiredFieldValidator ControlToValidate="txtrefpractice" runat="server" ID="rqrefprac"
-                    ErrorMessage="*" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
+                <%--<asp:DropDownList runat="server" ID="ddl_doctors" DataValueField="DoctorID"></asp:DropDownList>--%>                
                 <asp:TextBox runat="server" ID="txtrefpractice"></asp:TextBox>
             </div>
         </div>
         <div style="clear: both;">
             <div style="float: left; text-align: right">Patient First Name:*</div>
             <div style="float: right; text-align: left">
-                <asp:RequiredFieldValidator ControlToValidate="txtpfname" runat="server" ID="rqfname"
-                    ErrorMessage="*" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:TextBox runat="server" ID="txtpfname"></asp:TextBox>
             </div>
         </div>
         <div style="clear: both;">
             <div style="float: left; text-align: right">Patient Last Name:*</div>
-            <div style="float: right; text-align: left">
-                <asp:RequiredFieldValidator ControlToValidate="txtplname" runat="server" ID="rqlname"
-                    ErrorMessage="*" ValidationGroup="prefvalidation" ForeColor="Red"></asp:RequiredFieldValidator>
+            <div style="float: right; text-align: left">                
                 <asp:TextBox runat="server" ID="txtplname"></asp:TextBox>
             </div>
         </div>

@@ -36,6 +36,11 @@ namespace CADVWeb
                 }
                 else lbFailureText.Text = "User Name or password is incorrect";
             }            
+        }
+
+        protected void lnkNewUser_Command(object sender, System.Web.UI.WebControls.CommandEventArgs e)
+        {
+            Response.Redirect("NewUser.aspx");
         }      
       
     }

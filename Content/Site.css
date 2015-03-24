@@ -1562,3 +1562,13 @@ float: right;
 #prefform input {
     margin-left:0px;
 }
+
+#nuserform input, #nuserform textarea, #nuserform select{
+    margin:8px 0px;
+    background-color:#fff;
+    border:1px solid #e0e0e0;
+}
+
+#nuserform input {
+    margin-left:0px;
+}
