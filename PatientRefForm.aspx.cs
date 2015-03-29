@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CADVWeb.DataModel;
 using System.Data.Entity.Validation;
+using System.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace CADVWeb
 {
@@ -103,9 +106,14 @@ namespace CADVWeb
                 objPatRef.Comments = txtreferraltypes.Text;
                 objPatRef.Createdby = ((CADV_UserMaster)(Session["UserCached"])).Loginname;
                 objPatRef.Postalcode = txtpzip.Text;
+                objPatRef.PatientEmail = txtpemail.Text;
 
                 cadvDBContext.CADV_PatientReferral.Add(objPatRef);
                 cadvDBContext.SaveChanges();
+
+                if (!String.IsNullOrEmpty(txtpemail.Text))
+                    NotifyPatient(txtpfname.Text, txtpemail.Text, "Dr. " + ((CADV_UserMaster)(Session["UserCached"])).Firstname + " " + ((CADV_UserMaster)(Session["UserCached"])).Lastname);
+
                 Response.Redirect("Success.aspx?mc=msgsucc");
             }
             catch (DbEntityValidationException exp)
@@ -120,6 +128,27 @@ namespace CADVWeb
                 }
                 throw;
             }
+        }
+
+        private void NotifyPatient(string toName, string emailTo, string referredBy)
+        {
+            string smtpAddress = ConfigurationManager.AppSettings["smtpaddress"].ToString();
+            int smtpPort = Convert.ToInt32(ConfigurationManager.AppSettings["smtpport"].ToString());
+            string emailFrom = ConfigurationManager.AppSettings["senderappemail"].ToString();
+            bool enableSSL = Convert.ToBoolean(Convert.ToInt32(ConfigurationManager.AppSettings["ssl"]));
+            string defaultSubject = ConfigurationManager.AppSettings["patnotificationsubject"].ToString();
+            string pass = ConfigurationManager.AppSettings["pin"].ToString();
+
+            string emailContent = "Dear " + toName + ", <br/>Your case has been referred to another Doctor by " + referredBy + ".</br>With Sincere Regards</br>CADV";
+
+            var client = new SmtpClient(smtpAddress, smtpPort)
+            {
+                Credentials = new NetworkCredential(emailFrom, pass),
+                EnableSsl = enableSSL,               
+            };
+            MailMessage mailMsg = new MailMessage(emailFrom, emailTo, defaultSubject, emailContent);
+            mailMsg.IsBodyHtml = true;
+            client.Send(mailMsg); /* The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. */
         }
     }
 }

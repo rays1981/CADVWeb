@@ -2,6 +2,7 @@
 <Schema Namespace="CADVDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="CADVDbModelStoreContainer">
     <EntitySet Name="CADV_Doctors" EntityType="CADVDbModel.Store.CADV_Doctors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CADV_Patient_ReferralTypes" EntityType="CADVDbModel.Store.CADV_Patient_ReferralTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CADV_PatientReferral" EntityType="CADVDbModel.Store.CADV_PatientReferral" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CADV_ReferralTypes" EntityType="CADVDbModel.Store.CADV_ReferralTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CADV_States" EntityType="CADVDbModel.Store.CADV_States" store:Type="Tables" Schema="dbo" />
@@ -18,6 +19,14 @@
     <Property Name="Middlename" Type="varchar" MaxLength="60" />
     <Property Name="Lastname" Type="varchar" MaxLength="60" />
   </EntityType>
+  <EntityType Name="CADV_Patient_ReferralTypes">
+    <Key>
+      <PropertyRef Name="ReferralID" />
+      <PropertyRef Name="ReferralTypeID" />
+    </Key>
+    <Property Name="ReferralID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReferralTypeID" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="CADV_PatientReferral">
     <Key>
       <PropertyRef Name="ReferralID" />
@@ -32,7 +41,8 @@
     <Property Name="Address_city" Type="varchar" MaxLength="60" />
     <Property Name="Address_state" Type="varchar" MaxLength="4" />
     <Property Name="Postalcode" Type="varchar" MaxLength="20" />
-    <Property Name="PhoneNumber" Type="int" />
+    <Property Name="PhoneNumber" Type="int" Nullable="false" />
+    <Property Name="PatientEmail" Type="varchar" MaxLength="255" />
     <Property Name="Comments" Type="ntext" />
     <Property Name="Createdby" Type="varchar" MaxLength="60" />
   </EntityType>
@@ -55,11 +65,12 @@
       <PropertyRef Name="UserID" />
     </Key>
     <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Firstname" Type="varchar" MaxLength="255" />
-    <Property Name="Lastname" Type="varchar" MaxLength="255" />
-    <Property Name="Loginname" Type="varchar" MaxLength="60" />
-    <Property Name="Loginpass" Type="varchar" MaxLength="10" />
-    <Property Name="RoleID" Type="int" />
+    <Property Name="Firstname" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Lastname" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Loginname" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="Loginpass" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
     <Property Name="Createdon" Type="datetime" />
   </EntityType>
   <EntityType Name="CADV_UserRoles">

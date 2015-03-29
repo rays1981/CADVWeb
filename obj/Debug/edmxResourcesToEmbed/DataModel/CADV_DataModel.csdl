@@ -7,6 +7,7 @@
     <EntitySet Name="CADV_Doctors" EntityType="CADVDbModel.CADV_Doctors" />
     <EntitySet Name="CADV_UserMaster" EntityType="CADVDbModel.CADV_UserMaster" />
     <EntitySet Name="CADV_UserRoles" EntityType="CADVDbModel.CADV_UserRoles" />
+    <EntitySet Name="CADV_Patient_ReferralTypes" EntityType="CADVDbModel.CADV_Patient_ReferralTypes" />
   </EntityContainer>
   <EntityType Name="CADV_PatientReferral">
     <Key>
@@ -22,9 +23,10 @@
     <Property Name="Address_city" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
     <Property Name="Address_state" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
     <Property Name="Postalcode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
     <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Createdby" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="PatientEmail" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="CADV_ReferralTypes">
     <Key>
@@ -55,12 +57,13 @@
       <PropertyRef Name="UserID" />
     </Key>
     <Property Type="Guid" Name="UserID" Nullable="false" />
-    <Property Type="String" Name="Firstname" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Lastname" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Loginname" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Loginpass" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="RoleID" />
+    <Property Type="String" Name="Firstname" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="Lastname" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="Loginname" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="Loginpass" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="Int32" Name="RoleID" Nullable="false" />
     <Property Type="DateTime" Name="Createdon" Precision="3" />
+    <Property Type="String" Name="Email" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="CADV_UserRoles">
     <Key>
@@ -68,5 +71,13 @@
     </Key>
     <Property Type="Int32" Name="RoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="Role" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CADV_Patient_ReferralTypes">
+    <Key>
+      <PropertyRef Name="ReferralID" />
+      <PropertyRef Name="ReferralTypeID" />
+    </Key>
+    <Property Type="Guid" Name="ReferralID" Nullable="false" />
+    <Property Type="Int32" Name="ReferralTypeID" Nullable="false" />
   </EntityType>
 </Schema>

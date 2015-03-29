@@ -24,8 +24,9 @@ namespace CADVWeb.DataModel
         public string Address_city { get; set; }
         public string Address_state { get; set; }
         public string Postalcode { get; set; }
-        public Nullable<int> PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
         public string Comments { get; set; }
         public string Createdby { get; set; }
+        public string PatientEmail { get; set; }
     }
 }

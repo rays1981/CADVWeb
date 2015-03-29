@@ -14,7 +14,7 @@
     <RootNamespace>CADVWeb</RootNamespace>
     <AssemblyName>CADVWeb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -288,6 +288,12 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\CADV_Patient_ReferralTypes.cs">
+      <DependentUpon>CADV_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CADV_ReferralTypes.cs">
+      <DependentUpon>CADV_DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="NewUser.aspx.cs">
       <DependentUpon>NewUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -404,7 +410,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>10993</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9272/</IISUrl>
+          <IISUrl>https://localhost/CADVWeb</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

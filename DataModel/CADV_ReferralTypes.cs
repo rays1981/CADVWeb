@@ -12,15 +12,9 @@ namespace CADVWeb.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class CADV_UserMaster
+    public partial class CADV_ReferralTypes
     {
-        public System.Guid UserID { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public string Loginname { get; set; }
-        public string Loginpass { get; set; }
-        public int RoleID { get; set; }
-        public Nullable<System.DateTime> Createdon { get; set; }
-        public string Email { get; set; }
+        public int ReferralTypeID { get; set; }
+        public string ReferralTypeName { get; set; }
     }
 }

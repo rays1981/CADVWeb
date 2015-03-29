@@ -84,6 +84,12 @@
             </div>
         </div>
         <div style="clear: both;">
+            <div style="float: left; text-align: right">Patient Email:</div>
+            <div style="float: right; text-align: left">
+                <asp:TextBox runat="server" ID="txtpemail" TextMode="Email"></asp:TextBox>
+            </div>
+        </div>
+        <div style="clear: both;">
             <div style="float: left; text-align: right">Reason for Referral:</div>
             <div style="float: right; text-align: left">
                 <%--<asp:ListBox runat="server" ID="listreferral" SelectionMode="Multiple" DataTextField="ReferralTypeName" DataValueField="ReferralTypeID"></asp:ListBox>--%>
